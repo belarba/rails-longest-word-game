@@ -1,0 +1,15 @@
+<h1>Result</h1>
+
+<% if @grid_ok.zero? %>
+  <p><strong>Congratulations!</strong> <%= @word.upcase %> is a valid English word!</em></p>
+<% elsif @grid_ok == 1 %>
+  <p>Sorry but <strong><%= @word.upcase %></strong> can't be build out of <%= @letters.gsub(/\s+/, ', ') %></p>
+<% else %>
+  <p>Sorry but <stong><%= @word.upcase %></strong> does not seems to be a valid English word...</p>
+<% end %>
+
+Score: <%= @score %>
+
+<div class="new">
+  <%= link_to 'Play again', new_path %>
+</div>
